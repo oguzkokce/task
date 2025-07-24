@@ -1,10 +1,8 @@
 import React from "react";
-import CardList from "./components/CardList";
-import "./App.css";
-import EnergyBar from "./components/EnergyBar";
-import LevelFilter from "./components/LevelFilter";
+import CardsPage from "./components/CardsPage";
 import NavigationBar from "./components/NavigationBar";
 import StatusBar from "./components/StatusBar";
+import "./App.css";
 
 function App() {
   return (
@@ -12,9 +10,7 @@ function App() {
       <StatusBar />
       <NavigationBar />
       <div className="ns-main-bg-figma">
-        <EnergyBar energy={95} remainingTime="1:59" />
-        <LevelFilter />
-        <CardList />
+        <CardsPage />
       </div>
     </div>
   );

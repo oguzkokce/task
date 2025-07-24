@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 
 const filters = [
@@ -8,10 +8,9 @@ const filters = [
   { label: "Max Sv", value: "max" },
 ];
 
-export default function LevelFilter() {
-  const [selected, setSelected] = useState("all");
+export default function LevelFilter({ selected, setSelected }) {
   return (
-    <div className="ns-levelfilter-figma">
+    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', margin: '0 0 16px 0' }}>
       {filters.map((f) => (
         <button
           key={f.value}

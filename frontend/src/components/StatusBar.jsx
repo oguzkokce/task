@@ -6,7 +6,7 @@ export default function StatusBar() {
     <div className="statusbar">
       <span className="statusbar-time">9:41</span>
       <div className="statusbar-icons">
-        <img src="/assets/svg/Cellular Connection.svg" alt="Sinyal" className="statusbar-icon signal" />
+        <img src="/assets/svg/Cellular-Connection.svg" alt="Sinyal" className="statusbar-icon signal" />
         <img src="/assets/svg/WiFi.svg" alt="WiFi" className="statusbar-icon wifi" />
         <img src="/assets/svg/Battery.svg" alt="Pil" className="statusbar-icon battery" />
       </div>

@@ -22,11 +22,11 @@ export const getEnergy = async (userId) => {
     return await res.json();
   };
   
-  export const levelUp = async (cardId) => {
+  export const levelUp = async (userId, cardId) => {
     const res = await fetch(`/api/level-up`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ cardId }),
+      body: JSON.stringify({ userId, cardId }),
     });
     return await res.json();
   };

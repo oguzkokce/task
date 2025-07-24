@@ -20,7 +20,19 @@ router.get('/', async (req, res) => {
   regenerateEnergy(user);
   await user.save();
 
-  res.json({ energy: user.energy });
+  // Kalan süre hesapla
+  const maxEnergy = 100;
+  const regenInterval = 2 * 60 * 1000; // 2 dakika
+  let remainingMs = 0;
+  if (user.energy < maxEnergy) {
+    const now = Date.now();
+    const lastUpdate = user.energyLastUpdated ? user.energyLastUpdated.getTime() : now;
+    const elapsed = now - lastUpdate;
+    remainingMs = regenInterval - (elapsed % regenInterval);
+    if (remainingMs < 0) remainingMs = 0;
+  }
+
+  res.json({ energy: user.energy, remainingMs });
 });
 
 module.exports = router;

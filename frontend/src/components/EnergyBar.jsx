@@ -1,7 +1,14 @@
 import React from "react";
 import "../App.css"; // CSS'i ayrı tutmak için (yada App.css'e ekle)
 
-export default function EnergyBar({ percent = 95, remaining = "1:59" }) {
+export default function EnergyBar({ percent = 95, remainingMs = 0 }) {
+  function formatMs(ms) {
+    if (!ms || ms <= 0) return '00:00';
+    const totalSec = Math.ceil(ms / 1000);
+    const min = Math.floor(totalSec / 60);
+    const sec = totalSec % 60;
+    return `${min}:${sec.toString().padStart(2, '0')}`;
+  }
   return (
     <div className="energy-bar-root">
       {/* Energy Icon */}
@@ -16,7 +23,7 @@ export default function EnergyBar({ percent = 95, remaining = "1:59" }) {
         <div className="energy-bar-header">
           <span className="energy-bar-title">Enerji</span>
           <span className="energy-bar-remaining">
-            %1 Yenilenmesine Kalan: {remaining}
+            %1 Yenilenmesine Kalan: {formatMs(remainingMs)}
           </span>
         </div>
 
