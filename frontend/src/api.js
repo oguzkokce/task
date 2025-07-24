@@ -1,7 +1,9 @@
 // api.js
 export const getEnergy = async (userId) => {
   const res = await fetch(`/api/energy?userId=${userId}`);
-  return await res.json();
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
 };
 
 export const progressCard = async (userId, cardId) => {
@@ -10,7 +12,9 @@ export const progressCard = async (userId, cardId) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, cardId }),
   });
-  return await res.json();
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
 };
 
 export const batchProgress = async (userId, cardId, count) => {
@@ -19,7 +23,9 @@ export const batchProgress = async (userId, cardId, count) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, cardId, count }),
   });
-  return await res.json();
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
 };
 
 export const levelUp = async (userId, cardId) => {
@@ -28,5 +34,7 @@ export const levelUp = async (userId, cardId) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, cardId }),
   });
-  return await res.json();
-}; 
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
+};
