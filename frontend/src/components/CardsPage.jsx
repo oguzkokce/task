@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { getEnergy, progressCard, batchProgress, levelUp } from "../api";
+import { getEnergy, batchProgress, levelUp } from "../api";
 import EnergyBar from "./EnergyBar";
 import CardItem from "./CardItem";
 import LevelFilter from "./LevelFilter";
@@ -89,16 +89,16 @@ export default function CardsPage() {
   const [loading, setLoading] = useState(false);
   const [remainingMs, setRemainingMs] = useState(0);
   const [selectedLevel, setSelectedLevel] = useState("all");
-  const [holdTimer, setHoldTimer] = useState(null);
+  const holdTimerRef = useRef(null);
 
   const clickBuffer = useRef({});
   const timerRef = useRef({});
 
   // Tüm timer ve interval temizliği
   const clearAllBuffersAndTimers = () => {
-    if (holdTimer) {
-      clearInterval(holdTimer);
-      setHoldTimer(null);
+    if (holdTimerRef.current) {
+      clearInterval(holdTimerRef.current);
+      holdTimerRef.current = null;
     }
     Object.keys(timerRef.current).forEach((key) => {
       if (timerRef.current[key]) {
@@ -213,9 +213,9 @@ export default function CardsPage() {
   const handleHoldStart = (cardId) => {
     const card = cards.find((c) => c._id === cardId);
     if (!card || card.level >= 3 || card.progress >= 100 || energyRef.current < 10 || loading) return;
-    if (holdTimer) {
-      clearInterval(holdTimer);
-      setHoldTimer(null);
+    if (holdTimerRef.current) {
+      clearInterval(holdTimerRef.current);
+      holdTimerRef.current = null;
     }
     const timer = setInterval(async () => {
       if (loading) return;
@@ -245,13 +245,13 @@ export default function CardsPage() {
       }
       setLoading(false);
     }, 400);
-    setHoldTimer(timer);
+    holdTimerRef.current = timer;
   };
 
   // Basılı tutma bırak
   const handleHoldEnd = () => {
-    if (holdTimer) clearInterval(holdTimer);
-    setHoldTimer(null);
+    if (holdTimerRef.current) clearInterval(holdTimerRef.current);
+    holdTimerRef.current = null;
   };
 
   // Batch (10'lu hızlı geliştirme)
@@ -259,11 +259,15 @@ export default function CardsPage() {
     const card = cards.find((c) => c._id === cardId);
     if (!card || card.level >= 3 || card.progress >= 100 || energyRef.current < 10) return;
     setLoading(true);
-    const res = await batchProgress(USER_ID, cardId, count);
-    updateCard(cardId, res.progress);
-    setEnergySafe(res.energy);
-    const data = await getEnergy(USER_ID);
-    setRemainingMs(data.remainingMs || 0);
+    try {
+      const res = await batchProgress(USER_ID, cardId, count);
+      updateCard(cardId, res.progress);
+      setEnergySafe(res.energy);
+      const data = await getEnergy(USER_ID);
+      setRemainingMs(data.remainingMs || 0);
+    } catch (err) {
+      // ignore
+    }
     setLoading(false);
   };
 
@@ -272,8 +276,12 @@ export default function CardsPage() {
     const card = cards.find((c) => c._id === cardId);
     if (!card || card.level >= 3 || card.progress < 100) return;
     setLoading(true);
-    const res = await levelUp(USER_ID, cardId);
-    updateCard(cardId, res.progress, res.level);
+    try {
+      const res = await levelUp(USER_ID, cardId);
+      updateCard(cardId, res.progress, res.level);
+    } catch (err) {
+      // ignore
+    }
     setLoading(false);
   };
 
