@@ -10,7 +10,14 @@ const filters = [
 
 export default function LevelFilter({ selected, setSelected }) {
   return (
-    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', margin: '0 0 16px 0' }}>
+    <div
+      style={{
+        display: "flex",
+        gap: 12,
+        justifyContent: "center",
+        margin: "0 0 16px 0",
+      }}
+    >
       {filters.map((f) => (
         <button
           key={f.value}
@@ -22,4 +29,4 @@ export default function LevelFilter({ selected, setSelected }) {
       ))}
     </div>
   );
-} 
+}
