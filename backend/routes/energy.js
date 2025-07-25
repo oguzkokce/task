@@ -7,8 +7,6 @@ const regenerateEnergy = require("../utils/energyRegen");
 // GET /api/energy?userId=xyz
 router.get("/", async (req, res) => {
   const { userId } = req.query;
-  console.log("userId:", userId, "| Type:", typeof userId); // ekle!
-  console.log("isValid:", mongoose.Types.ObjectId.isValid(userId)); // ekle!
 
   if (!userId || !mongoose.Types.ObjectId.isValid(userId)) {
     return res.status(400).json({ error: "Geçersiz userId formatı" });
