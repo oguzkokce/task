@@ -1,5 +1,5 @@
 import React from "react";
-import "./MinimizeCard.css";
+import "../App.css";
 
 export default function MinimizeCard() {
   return (
