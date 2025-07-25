@@ -15,17 +15,17 @@ const CARD_MASTER = [
       {
         name: "Gümüş Diş",
         desc: "Sade, keskin bir savaş kılıcı.",
-        image: "/assets/items/savasbaltasi1.png",
+        image: "/assets/items/uzunkilic1.png",
       },
       {
         name: "Zümrüt Yürek",
         desc: "Can alıcı darbeler için güçlendirildi.",
-        image: "/assets/items/savasbaltasi2.png",
+        image: "/assets/items/uzunkilic2.png",
       },
       {
         name: "Altın Pençe",
         desc: "Kralların kanını döken efsanevi keskinlik.",
-        image: "/assets/items/savasbaltasi3.png",
+        image: "/assets/items/uzunkilic3.png",
       },
     ],
   },
