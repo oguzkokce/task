@@ -554,8 +554,8 @@ body {
   height: 11px;
   line-height: 120%;
   position: absolute;
-  top: 470px;
-  left: 206px;
+  top: 96px;
+  left: 12px;
   letter-spacing: 0;
   z-index: 3;
 }
@@ -568,8 +568,8 @@ body {
   height: 10px;
   line-height: 120%;
   position: absolute;
-  top: 483px;
-  left: 206px;
+  top: 110px;
+  left: 12px;
   letter-spacing: 0;
   z-index: 3;
 }
@@ -824,8 +824,8 @@ body {
     0 0 3px 0 #fff inset,
     0 0 2px 0 #ee39a8;
   position: absolute;
-  top: 500px;
-  left: 208px;
+  bottom: 10px;
+  left: 18px;
   z-index: 2;
 }
 
@@ -836,7 +836,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 4px 0 #f8b0dc;
   position: absolute;
-  top: 498px;
-  left: 206px;
+  bottom: 8px;
+  left: 16px;
   z-index: 1;
 }
