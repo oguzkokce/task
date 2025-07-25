@@ -10,67 +10,163 @@ const USER_ID = "68810e2e416cca3428a02978"; // Sabit userId
 // Kart master data (8 kart, 3 seviye)
 const CARD_MASTER = [
   {
-    key: 'uzun-kilic',
+    key: "uzun-kilic",
     levels: [
-      { name: 'Gümüş Diş', desc: 'Sade, keskin bir savaş kılıcı.', image: '/assets/items/savasbaltasi1.png' },
-      { name: 'Zümrüt Yürek', desc: 'Can alıcı darbeler için güçlendirildi.', image: '/assets/items/savasbaltasi2.png' },
-      { name: 'Altın Pençe', desc: 'Kralların kanını döken efsanevi keskinlik.', image: '/assets/items/savasbaltasi3.png' },
+      {
+        name: "Gümüş Diş",
+        desc: "Sade, keskin bir savaş kılıcı.",
+        image: "/assets/items/savasbaltasi1.png",
+      },
+      {
+        name: "Zümrüt Yürek",
+        desc: "Can alıcı darbeler için güçlendirildi.",
+        image: "/assets/items/savasbaltasi2.png",
+      },
+      {
+        name: "Altın Pençe",
+        desc: "Kralların kanını döken efsanevi keskinlik.",
+        image: "/assets/items/savasbaltasi3.png",
+      },
     ],
   },
   {
-    key: 'savas-baltasi',
+    key: "savas-baltasi",
     levels: [
-      { name: 'Hafif Balta Parıltısı', desc: 'Hafif el hali bir balta.', image: '/assets/items/savasbaltasi1.png' },
-      { name: 'Zümrüt Kesik', desc: 'Düşmanı donduran güçlü balta.', image: '/assets/items/savasbaltasi2.png' },
-      { name: 'Ateşin Yovarı', desc: 'Her vuruşu ruhu koparır.', image: '/assets/items/savasbaltasi3.png' },
+      {
+        name: "Hafif Balta Parıltısı",
+        desc: "Hafif el hali bir balta.",
+        image: "/assets/items/savasbaltasi1.png",
+      },
+      {
+        name: "Zümrüt Kesik",
+        desc: "Düşmanı donduran güçlü balta.",
+        image: "/assets/items/savasbaltasi2.png",
+      },
+      {
+        name: "Ateşin Yovarı",
+        desc: "Her vuruşu ruhu koparır.",
+        image: "/assets/items/savasbaltasi3.png",
+      },
     ],
   },
   {
-    key: 'buyu-asasi',
+    key: "buyu-asasi",
     levels: [
-      { name: 'Büyücü Dalı', desc: 'Temel büyü asası.', image: '/assets/items/buyuasasi1.png' },
-      { name: 'Zümrüt Kök', desc: 'Doğanın gücünü taşır.', image: '/assets/items/buyuasasi2.png' },
-      { name: 'Altın Kök', desc: 'Yıldırımları yere indirtir, zamanı büker.', image: '/assets/items/buyuasasi3.png' },
+      {
+        name: "Büyücü Dalı",
+        desc: "Temel büyü asası.",
+        image: "/assets/items/buyuasasi1.png",
+      },
+      {
+        name: "Zümrüt Kök",
+        desc: "Doğanın gücünü taşır.",
+        image: "/assets/items/buyuasasi2.png",
+      },
+      {
+        name: "Altın Kök",
+        desc: "Yıldırımları yere indirtir, zamanı büker.",
+        image: "/assets/items/buyuasasi3.png",
+      },
     ],
   },
   {
-    key: 'kalkan',
+    key: "kalkan",
     levels: [
-      { name: 'Gümüş Siper', desc: 'Basit bir koruma aracı.', image: '/assets/items/kalkan.png' },
-      { name: 'Zümrüt Duvar', desc: 'Gelen okları durdurur.', image: '/assets/items/kalkan2.png' },
-      { name: 'Altın Duvar', desc: 'Her türlü darbeye karşı koyar.', image: '/assets/items/kalkan3.png' },
+      {
+        name: "Gümüş Siper",
+        desc: "Basit bir koruma aracı.",
+        image: "/assets/items/kalkan.png",
+      },
+      {
+        name: "Zümrüt Duvar",
+        desc: "Gelen okları durdurur.",
+        image: "/assets/items/kalkan2.png",
+      },
+      {
+        name: "Altın Duvar",
+        desc: "Her türlü darbeye karşı koyar.",
+        image: "/assets/items/kalkan3.png",
+      },
     ],
   },
   {
-    key: 'savas-cekici',
+    key: "savas-cekici",
     levels: [
-      { name: 'Taş Parçalayıcı', desc: 'Ağır ve yıkıcı bir çekiç.', image: '/assets/items/savascekici1.png' },
-      { name: 'Zümrüt Etki', desc: 'Zırhları paramparça eder.', image: '/assets/items/savascekici2.png' },
-      { name: 'Altın Ezici', desc: 'En büyük düşmanları ezer.', image: '/assets/items/savascekici3.png' },
+      {
+        name: "Taş Parçalayıcı",
+        desc: "Ağır ve yıkıcı bir çekiç.",
+        image: "/assets/items/savascekici1.png",
+      },
+      {
+        name: "Zümrüt Etki",
+        desc: "Zırhları paramparça eder.",
+        image: "/assets/items/savascekici2.png",
+      },
+      {
+        name: "Altın Ezici",
+        desc: "En büyük düşmanları ezer.",
+        image: "/assets/items/savascekici3.png",
+      },
     ],
   },
   {
-    key: 'egri-kilic',
+    key: "egri-kilic",
     levels: [
-      { name: 'Gümüş Bıçak', desc: 'Hızlı ve ölümcül.', image: '/assets/items/egrikilic1.png' },
-      { name: 'Zümrüt Çengel', desc: 'Düşmanı sersemletir.', image: '/assets/items/egrikilic2.png' },
-      { name: 'Altın Yılan', desc: 'Zehirli darbeler, kolay zaferler.', image: '/assets/items/egrikilic3.png' },
+      {
+        name: "Gümüş Bıçak",
+        desc: "Hızlı ve ölümcül.",
+        image: "/assets/items/egrikilic1.png",
+      },
+      {
+        name: "Zümrüt Çengel",
+        desc: "Düşmanı sersemletir.",
+        image: "/assets/items/egrikilic2.png",
+      },
+      {
+        name: "Altın Yılan",
+        desc: "Zehirli darbeler, kolay zaferler.",
+        image: "/assets/items/egrikilic3.png",
+      },
     ],
   },
   {
-    key: 'kisa-kilic',
+    key: "kisa-kilic",
     levels: [
-      { name: 'Gümüş Kesik', desc: 'Hızlı saldırı için ideal.', image: '/assets/items/kisakilic1.png' },
-      { name: 'Zümrüt Dilim', desc: 'Randımanlı bir bıçak.', image: '/assets/items/kisakilic2.png' },
-      { name: 'Altın Birim', desc: 'Randımanlı bir bıçak.', image: '/assets/items/kisakilic3.png' },
+      {
+        name: "Gümüş Kesik",
+        desc: "Hızlı saldırı için ideal.",
+        image: "/assets/items/kisakilic1.png",
+      },
+      {
+        name: "Zümrüt Dilim",
+        desc: "Randımanlı bir bıçak.",
+        image: "/assets/items/kisakilic2.png",
+      },
+      {
+        name: "Altın Birim",
+        desc: "Randımanlı bir bıçak.",
+        image: "/assets/items/kisakilic3.png",
+      },
     ],
   },
   {
-    key: 'buyu-kitabi',
+    key: "buyu-kitabi",
     levels: [
-      { name: 'Gümüş Sayfalar', desc: 'Büyüye yeni başlayanlar için.', image: '/assets/items/buyukitabi1.png' },
-      { name: 'Zümrüt Harfler', desc: 'Doğanın sırlarını barındırır.', image: '/assets/items/buyukitabi2.png' },
-      { name: 'Altın Kitabe', desc: 'En eski büyülerin kaynağı.', image: '/assets/items/buyukitabi3.png' },
+      {
+        name: "Gümüş Sayfalar",
+        desc: "Büyüye yeni başlayanlar için.",
+        image: "/assets/items/buyukitabi1.png",
+      },
+      {
+        name: "Zümrüt Harfler",
+        desc: "Doğanın sırlarını barındırır.",
+        image: "/assets/items/buyukitabi2.png",
+      },
+      {
+        name: "Altın Kitabe",
+        desc: "En eski büyülerin kaynağı.",
+        image: "/assets/items/buyukitabi3.png",
+      },
     ],
   },
 ];
@@ -79,7 +175,7 @@ function getCardMeta(card, cards) {
   const idx = cards.findIndex((c) => c._id === card._id);
   const master = CARD_MASTER[idx % CARD_MASTER.length];
   const levelIdx = Math.max(0, Math.min((card.level || 1) - 1, 2));
-  return master ? master.levels[levelIdx] : { name: '', desc: '', image: '' };
+  return master ? master.levels[levelIdx] : { name: "", desc: "", image: "" };
 }
 
 export default function CardsPage() {
@@ -143,8 +239,8 @@ export default function CardsPage() {
       prev.map((c) =>
         c._id === cardId
           ? { ...c, progress, ...(level !== null ? { level } : {}) }
-          : c
-      )
+          : c,
+      ),
     );
     const card = cards.find((c) => c._id === cardId);
     const newLevel = level !== null ? level : card?.level;
@@ -156,7 +252,12 @@ export default function CardsPage() {
   // Tekli progress (çoklu tıklama için buffer'lı)
   const handleProgressBuffered = (cardId) => {
     const card = cards.find((c) => c._id === cardId);
-    if (!card || card.level >= 3 || card.progress >= 100 || energyRef.current <= 0) {
+    if (
+      !card ||
+      card.level >= 3 ||
+      card.progress >= 100 ||
+      energyRef.current <= 0
+    ) {
       clearAllBuffersAndTimers();
       return;
     }
@@ -170,10 +271,13 @@ export default function CardsPage() {
     // Localde hemen animasyon için göster
     setCards((prev) =>
       prev.map((c) =>
-        c._id === cardId && c.progress < 100 && c.level < 3 && energyRef.current > 0
+        c._id === cardId &&
+        c.progress < 100 &&
+        c.level < 3 &&
+        energyRef.current > 0
           ? { ...c, progress: Math.min(c.progress + 2, 100) }
-          : c
-      )
+          : c,
+      ),
     );
     setEnergySafe(Math.max(energyRef.current - 1, 0));
   };
@@ -182,7 +286,13 @@ export default function CardsPage() {
   const flushBuffer = async (cardId) => {
     const count = clickBuffer.current[cardId] || 0;
     const card = cards.find((c) => c._id === cardId);
-    if (!card || card.level >= 3 || card.progress >= 100 || count === 0 || energyRef.current <= 0) {
+    if (
+      !card ||
+      card.level >= 3 ||
+      card.progress >= 100 ||
+      count === 0 ||
+      energyRef.current <= 0
+    ) {
       clearAllBuffersAndTimers();
       return;
     }
@@ -197,8 +307,8 @@ export default function CardsPage() {
         prev.map((c) =>
           c._id === cardId
             ? { ...c, progress: res.progress, level: res.level || c.level }
-            : c
-        )
+            : c,
+        ),
       );
       setEnergySafe(res.energy);
       if (res.progress >= 100 || res.level === 3) {
@@ -212,7 +322,14 @@ export default function CardsPage() {
   // Basılı tutma (hold) batch'i
   const handleHoldStart = (cardId) => {
     const card = cards.find((c) => c._id === cardId);
-    if (!card || card.level >= 3 || card.progress >= 100 || energyRef.current < 10 || loading) return;
+    if (
+      !card ||
+      card.level >= 3 ||
+      card.progress >= 100 ||
+      energyRef.current < 10 ||
+      loading
+    )
+      return;
     if (holdTimerRef.current) {
       clearInterval(holdTimerRef.current);
       holdTimerRef.current = null;
@@ -220,13 +337,22 @@ export default function CardsPage() {
     const timer = setInterval(async () => {
       if (loading) return;
       const latestCard = cards.find((c) => c._id === cardId);
-      if (!latestCard || latestCard.level >= 3 || latestCard.progress >= 100 || energyRef.current < 10) {
+      if (
+        !latestCard ||
+        latestCard.level >= 3 ||
+        latestCard.progress >= 100 ||
+        energyRef.current < 10
+      ) {
         handleHoldEnd();
         return;
       }
       setLoading(true);
       try {
-        const usable = Math.min(5, energyRef.current, Math.ceil((100 - latestCard.progress) / 2));
+        const usable = Math.min(
+          5,
+          energyRef.current,
+          Math.ceil((100 - latestCard.progress) / 2),
+        );
         if (usable < 1) {
           handleHoldEnd();
           setLoading(false);
@@ -257,7 +383,13 @@ export default function CardsPage() {
   // Batch (10'lu hızlı geliştirme)
   const handleBatch = async (cardId, count = 10) => {
     const card = cards.find((c) => c._id === cardId);
-    if (!card || card.level >= 3 || card.progress >= 100 || energyRef.current < 10) return;
+    if (
+      !card ||
+      card.level >= 3 ||
+      card.progress >= 100 ||
+      energyRef.current < 10
+    )
+      return;
     setLoading(true);
     try {
       const res = await batchProgress(USER_ID, cardId, count);

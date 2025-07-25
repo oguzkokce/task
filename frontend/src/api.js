@@ -2,7 +2,7 @@
 export const getEnergy = async (userId) => {
   const res = await fetch(`/api/energy?userId=${userId}`);
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Request failed');
+  if (!res.ok) throw new Error(data.error || "Request failed");
   return data;
 };
 
@@ -13,7 +13,7 @@ export const progressCard = async (userId, cardId) => {
     body: JSON.stringify({ userId, cardId }),
   });
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Request failed');
+  if (!res.ok) throw new Error(data.error || "Request failed");
   return data;
 };
 
@@ -24,7 +24,7 @@ export const batchProgress = async (userId, cardId, count) => {
     body: JSON.stringify({ userId, cardId, count }),
   });
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Request failed');
+  if (!res.ok) throw new Error(data.error || "Request failed");
   return data;
 };
 
@@ -35,6 +35,6 @@ export const levelUp = async (userId, cardId) => {
     body: JSON.stringify({ userId, cardId }),
   });
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Request failed');
+  if (!res.ok) throw new Error(data.error || "Request failed");
   return data;
 };
